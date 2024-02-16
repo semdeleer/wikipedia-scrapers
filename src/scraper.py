@@ -46,7 +46,7 @@ class Scraper:
 
     def get_session_loop_request(self, cookie: str, url: str):
             with Session() as session:
-                self.get_session_request(cookie, session)  # Ignoring the return value for the cookie request
+                self.get_session_request(cookie, session)
                 country_list = self.get_session_request(url, session)
                 
                 if country_list:
