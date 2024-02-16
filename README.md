@@ -10,17 +10,17 @@ You have the option to incorporate an API that retrieves wikilinks from the prov
 
 ## Requirements
 
-[C:\Users\semde\BeCodeH\Projects\Project2\wikipedia-scrapers\requirements.txt](./installation)
+You can find everything in the [requirements.txt](./installation)
 
 ### Usage
 
-<ul>
+<ol>
     <code>
-        wikscraper = Scraper()
-        wikscraper.get_leaders()
-        wikscraper.get_wiki_leader()
-        wikscraper.get_first_paraf()
-        wikscraper.get_paraf_leader()
-        wikscraper.set_write_json()
+    wikscraper = Scraper()
+    wikscraper.get_leaders()
+    wikscraper.get_wiki_leader()
+    wikscraper.get_first_paraf()
+    wikscraper.get_paraf_leader()
+    wikscraper.set_write_json()
     </code>
-</ul>
+</ol>
