@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The project provides a convieent interface to interact with the country leaders API and extract information about country leaders, including their wikipedia paragraphs
+The project offers a user-friendly interface for interacting with the Country Leaders API, facilitating the extraction of comprehensive information about country leaders, including their respective Wikipedia paragraphs.
 
 ## Usage
 
