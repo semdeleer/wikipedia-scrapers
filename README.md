@@ -24,3 +24,6 @@ You can find everything in the [requirements.txt](./installation)
     wikscraper.set_write_json()
     </code>
 </ol>
+
+### Timeline 
+This project was created in 3 days.

@@ -3,6 +3,7 @@ from requests import Session
 from bs4 import BeautifulSoup
 import json
 import re
+import csv
 
 class Scraper:
     """
@@ -107,5 +108,23 @@ class Scraper:
             i["paraf"] = re.sub(brackt, '', i["paraf"])
         with open("classleadesparaf.json", "w", encoding='utf-8') as outfile:
             json.dump(dictl, outfile, indent=4, ensure_ascii=False)
+    
+    def write_csv(self):
+        #You need to add encoding utf8 after it because the json file is written with this param
+        with open('classleadesparaf.json', 'r', encoding='utf-8') as json_file:
+            jsondata = json.load(json_file)
+        
+        #the isinstance check if a object is a specefic class
+        if isinstance(jsondata, list) and jsondata:
+            keys = jsondata[0].keys()  # Assuming all dictionaries in the list have the same keys
+
+            with open('classleadesparaf.csv', 'w', newline='', encoding='utf-8') as outfile:
+                csv_writer = csv.writer(outfile)
+                #the keys from the json file become the headers
+                csv_writer.writerow(keys)
+
+                for item in jsondata:
+                    #The values become the rows of the csv file
+                    csv_writer.writerow(item.values())
 
 
