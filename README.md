@@ -10,7 +10,7 @@ You have the option to incorporate an API that retrieves wikilinks from the prov
 
 ## Requirements
 
-[requirements.txt](./installation)
+[C:\Users\semde\BeCodeH\Projects\Project2\wikipedia-scrapers\requirements.txt](./installation)
 
 ### Usage
 
