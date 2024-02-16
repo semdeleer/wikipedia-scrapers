@@ -2,6 +2,7 @@ import requests
 from requests import Session
 from bs4 import BeautifulSoup
 import json
+import re
 
 class Scraper:
     """
@@ -101,7 +102,10 @@ class Scraper:
     
     def set_write_json(self):
         dictl = self.get_paraf_leader()
-        with open("classleadesparaf.json", "w") as outfile:
-            json.dump(dictl, outfile, indent=4)
+        brackt = re.compile(r'\[.*?\]')
+        for i in dictl:
+            i["paraf"] = re.sub(brackt, '', i["paraf"])
+        with open("classleadesparaf.json", "w", encoding='utf-8') as outfile:
+            json.dump(dictl, outfile, indent=4, ensure_ascii=False)
 
 
