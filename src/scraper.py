@@ -4,6 +4,26 @@ from bs4 import BeautifulSoup
 import json
 
 class Scraper:
+    """
+    Scraper class for retrieving and processing data from the Country Leaders API and Wikipedia.
+
+    Attributes:
+    - root_url (str): The root URL for the Country Leaders API.
+    - status_url (str): The URL for checking the status of the API.
+    - countries_url (str): The URL for retrieving the list of countries from the API.
+    - cookie_url (str): The URL for obtaining a session cookie from the API.
+    - leaders_url (str): The URL for retrieving information about country leaders from the API.
+
+    Methods:
+    - get_session_request(url: str, session: Session) -> Optional[Dict]: Sends a GET request to the specified URL using the provided session.
+    - get_session_loop_request(cookie: str, url: str) -> Optional[Dict]: Sends a series of GET requests using a session and returns data based on the provided cookie and URL.
+    - get_session_loop_request_param(cookie: str, url: str, country_code: List[str]) -> Dict[str, List[Dict]]: Sends a series of GET requests with parameters using a session and returns data for each country code.
+    - get_leaders() -> Dict[str, List[Dict]]: Retrieves information about country leaders using the session loop and specified URLs.
+    - get_wiki_leader() -> List[str]: Retrieves Wikipedia URLs for country leaders based on the information obtained from the API.
+    - get_first_paraf() -> List[str]: Retrieves the first paragraphs from the Wikipedia pages of country leaders.
+    - get_paraf_leader() -> List[Dict[str, Union[str, List[str]]]]: Combines information about country leaders with their corresponding Wikipedia paragraphs.
+    - set_write_json(): Writes the information about country leaders and their paragraphs to a JSON file named "classleadesparaf.json".
+    """
 
     def __init__(self) -> None:
         self.root_url = "https://country-leaders.onrender.com/"
